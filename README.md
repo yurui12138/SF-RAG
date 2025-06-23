@@ -98,7 +98,7 @@ processor = PaperTreeRAG(config)
 loop.run_until_complete(processor.build_paper_tree("./files"))
 ```
 
-This step builds the paper tree using the parsed files in the `files` directory. For a demonstration of this step, refer to the **Paper Tree Building Demo Video** (filename: `paper_tree_building_demo.mp4`).
+This step builds the paper tree using the parsed files in the `files` directory. For a demonstration of this step, refer to the **Paper Tree Building Demo Video**.
 
 https://github.com/user-attachments/assets/a62e2127-0d60-4db5-9aa4-044da9cd1594
 
@@ -119,7 +119,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Global Retrieval Answer: \n{result}\n")
 ```
 
-**Demo Video**: `question_1_macro_single_demo.mp4`
+**Demo Video**: 
 
 https://github.com/user-attachments/assets/df026bab-7b94-4a52-9d10-b14d36420bd1
 
@@ -137,7 +137,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Local Retrieval Answer (pro=False): \n{result}\n")
 ```
 
-**Demo Video**: `question_2_detail_single_demo.mp4`
+**Demo Video**: 
 
 https://github.com/user-attachments/assets/fef549bc-5519-46d0-ad12-2d43166457e9
 
@@ -155,7 +155,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Local Retrieval Answer (pro=True): \n{result}\n")
 ```
 
-**Demo Video**: `question_3_multihop_single_demo.mp4`
+**Demo Video**: 
 
 https://github.com/user-attachments/assets/6ec6310a-baa9-4c4f-905f-ebc8011bd69c
 
@@ -173,7 +173,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Local Retrieval Answer (pro=True): \n{result}\n")
 ```
 
-**Demo Video**: `question_4_figure_single_demo.mp4`
+**Demo Video**: 
 
 https://github.com/user-attachments/assets/4befa596-2f1d-4f3e-99ce-c62364fa22ef
 
@@ -190,7 +190,7 @@ result = loop.run_until_complete(
 print(f"Cross-Paper Global Retrieval Answer: \n{result}\n")
 ```
 
-**Demo Video**: `question_5_macro_cross_demo.mp4`
+**Demo Video**: 
 
 https://github.com/user-attachments/assets/a167851d-4577-4269-90a2-fa9440378094
 
@@ -208,7 +208,7 @@ result = loop.run_until_complete(
 print(f"Cross-Paper Local Retrieval Answer (pro=False): \n{result}\n")
 ```
 
-**Demo Video**: `question_6_detail_cross_demo.mp4`
+**Demo Video**:
 
 https://github.com/user-attachments/assets/45df602a-9b77-4907-9e26-25d34032d27a
 
@@ -226,7 +226,7 @@ result = loop.run_until_complete(
 print(f"Cross-Paper Local Retrieval Answer (pro=True): \n{result}\n")
 ```
 
-**Demo Video**: `question_7_multihop_cross_demo.mp4`
+**Demo Video**:
 
 https://github.com/user-attachments/assets/e36b830e-72ec-4270-8396-898b261c1eea
 
