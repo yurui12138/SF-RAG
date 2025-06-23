@@ -1,0 +1,5 @@
+dotenv
+aiofiles
+pysbd
+openai
+requests
