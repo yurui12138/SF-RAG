@@ -1,0 +1,40 @@
+[
+    {
+        "img_path": "https://pic1.imgdb.cn/item/6835122458cb8da5c80fd175.jpg",
+        "page_idx": 0,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/6835122458cb8da5c80fd176.jpg",
+        "page_idx": 2,
+        "img_title": [
+            "Figure 1: The Transformer - model architecture."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/6835122458cb8da5c80fd178.jpg",
+        "page_idx": 3,
+        "img_title": [
+            "Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/6835122458cb8da5c80fd174.jpg",
+        "page_idx": 5,
+        "img_title": [
+            "Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. $n$ is the sequence length, $d$ is the representation dimension, $k$ is the kernel size of convolutions and $r$ the size of the neighborhood in restricted self-attention."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/6835122458cb8da5c80fd179.jpg",
+        "page_idx": 7,
+        "img_title": [
+            "Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/6835122458cb8da5c80fd177.jpg",
+        "page_idx": 8,
+        "img_title": "该图片没有标题"
+    }
+]
