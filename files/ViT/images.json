@@ -1,0 +1,151 @@
+[
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324f1.jpg",
+        "page_idx": 2,
+        "img_title": [
+            "Figure 1: Model overview. We split an image into fixed-size patches, linearly embed each of them, add position embeddings, and feed the resulting sequence of vectors to a standard Transformer encoder. In order to perform classification, we use the standard approach of adding an extra learnable “classification token” to the sequence. The illustration of the Transformer encoder was inspired by Vaswani et al. (2017)."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324ed.jpg",
+        "page_idx": 4,
+        "img_title": [
+            "Table 1: Details of Vision Transformer model variants."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324f0.jpg",
+        "page_idx": 5,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324eb.jpg",
+        "page_idx": 5,
+        "img_title": [
+            "Figure 2: Breakdown of VTAB performance in Natural, Specialized, and Structured task groups."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324ef.jpg",
+        "page_idx": 6,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324ec.jpg",
+        "page_idx": 6,
+        "img_title": [
+            "Figure 3: Transfer to ImageNet. While Figure 4: Linear few-shot evaluation on Imalarge ViT models perform worse than BiT geNet versus pre-training size. ResNets perResNets (shaded area) when pre-trained on form better with smaller pre-training datasets small datasets, they shine when pre-trained on but plateau sooner than ViT, which performs larger datasets. Similarly, larger ViT variants better with larger pre-training. ViT-b is ViT-B overtake smaller ones as the dataset grows. with all hidden dimensions halved."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324f2.jpg",
+        "page_idx": 6,
+        "img_title": [
+            "Figure 5: Performance versus cost for different architectures: Vision Transformers, ResNets, and hybrids. Vision Transformers generally outperform ResNets with the same computational budget. Hybrids improve upon pure Transformers for smaller model sizes, but the gap vanishes for larger models."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324ee.jpg",
+        "page_idx": 7,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ce58cb8da5c81324f3.jpg",
+        "page_idx": 8,
+        "img_title": [
+            "Figure 7: Left: Filters of the initial linear embedding of RGB values of ViT-L/32. Center: Similarity of position embeddings of ViT-L/32. Tiles show the cosine similarity between the position embedding of the patch with the indicated row and column and the position embeddings of all other patches. Right: Size of attended area by head and network depth. Each dot shows the mean attention distance across images for one of 16 heads at one layer. See Appendix D.6 for details."
+        ]
+    },
+    {
+        "img_path": "images/37312446885546c18b6525da4f0503edada4b6dd3e2534cb254ec4204156dac8.jpg",
+        "page_idx": 12,
+        "img_title": [
+            "Table 3: Hyperparameters for training. All models are trained with a batch size of 4096 and learning rate warmup of $10\\mathbf{k}$ steps. For ImageNet we found it beneficial to additionally apply gradient clipping at global norm 1. Training resolution is 224."
+        ]
+    },
+    {
+        "img_path": "images/1dfffa569a64f26c8a51212d4394246c559a42dd58c55365f6120cedfa5c825c.jpg",
+        "page_idx": 13,
+        "img_title": [
+            "Table 4: Hyperparameters for fine-tuning. All models are fine-tuned with cosine learning rate decay, a batch size of 512, no weight decay, and grad clipping at global norm 1. If not mentioned otherwise, fine-tuning resolution is 384."
+        ]
+    },
+    {
+        "img_path": "images/59a3945af0b0aa58eabba15a2fb50e57839af67f052eb952b3edfa1026630a9c.jpg",
+        "page_idx": 14,
+        "img_title": [
+            "Table 5: Top1 accuracy (in $\\%$ ) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M. These values correspond to Figure 3 in the main text. Models are fine-tuned at 384 resolution. Note that the ImageNet results are computed without additional techniques (Polyak averaging and 512 resolution images) used to achieve results in Table 2."
+        ]
+    },
+    {
+        "img_path": "images/2953978c1f4d3d751a9229ba9ea32d1fa5d0d953607e37624c6a59ff97f775c6.jpg",
+        "page_idx": 14,
+        "img_title": [
+            "Table 6: Detailed results of model scaling experiments. These correspond to Figure 5 in the main paper."
+        ]
+    },
+    {
+        "img_path": "images/d3d640e36578a12e47044ca31b7eedc330d47fe6159cf7eb333b735ffc54cd49.jpg",
+        "page_idx": 15,
+        "img_title": [
+            "Table 7: Fine-tuning ResNet models pre-trained with Adam and SGD."
+        ]
+    },
+    {
+        "img_path": "images/1e2009867066d4cc761389f10078e3ccfbb3f2d0df63ed94bfc6df9b00a9adb9.jpg",
+        "page_idx": 15,
+        "img_title": [
+            "Figure 8: Scaling different model dimensions of the Vision Transformer."
+        ]
+    },
+    {
+        "img_path": "images/b1ac4319f1e3b76e58baddd6ef0624388aa84048db83a2783bdd9072e69a1770.jpg",
+        "page_idx": 16,
+        "img_title": [
+            "Table 8: Results of the ablation study on positional embeddings with ViT-B/16 model evaluated on ImageNet 5-shot linear."
+        ]
+    },
+    {
+        "img_path": "images/c798e357b15a3df9f51553b246f42b4d05ce588f63e5ef99463cd2570c0b352c.jpg",
+        "page_idx": 16,
+        "img_title": [
+            "Figure 9: Position embeddings of models trained with different hyperparameters."
+        ]
+    },
+    {
+        "img_path": "images/277f82de2c6e1f4296df674d73bf02d6459916334586225344f9937342da20d4.jpg",
+        "page_idx": 17,
+        "img_title": [
+            "Figure 10: Size of attended area by head and network depth. Attention distance was computed for 128 example images by averaging the distance between the query pixel and all other pixels, weighted by the attention weight. Each dot shows the mean attention distance across images for one of 16 heads at one layer. Image width is 224 pixels."
+        ]
+    },
+    {
+        "img_path": "images/deb5c7ffd95280e76d5d8216725906e01927c7256a0e6761aebe1973fedef773.jpg",
+        "page_idx": 18,
+        "img_title": [
+            "Figure 11: Left: Real wall-clock timings of various architectures across input sizes. ViT models have speed comparable to similar ResNets. Right: Largest per-core batch-size fitting on device with various architectures across input sizes. ViT models are clearly more memory-efficient."
+        ]
+    },
+    {
+        "img_path": "images/b73517b7b8c86e6a50c189069c04392647dc7c23df71a0932566c1166f290160.jpg",
+        "page_idx": 18,
+        "img_title": [
+            "Figure 12: Performance of Axial-Attention based models, in terms of top-1 accuracy on ImageNet 5-shot linear, versus their speed in terms of number of FLOPs (left) and inference time (left)."
+        ]
+    },
+    {
+        "img_path": "images/f84eda4f3398abb3e44ce2177e26387e4a58a22afe0d6815c052c170f7548fe8.jpg",
+        "page_idx": 19,
+        "img_title": [
+            "Table 9 shows the scores attained on each of the VTAB-1k tasks.",
+            "Table 9: Breakdown of VTAB-1k performance across tasks."
+        ]
+    },
+    {
+        "img_path": "images/f357c7570ae11bbc44de7d63ddfd6cae88581dd907e3635b557a89d5371c4be0.jpg",
+        "page_idx": 20,
+        "img_title": [
+            "Figure 13: Further example attention maps as in Figure 6 (random selection)."
+        ]
+    }
+]
