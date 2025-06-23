@@ -98,7 +98,7 @@ processor = PaperTreeRAG(config)
 loop.run_until_complete(processor.build_paper_tree("./files"))
 ```
 
-This step builds the paper tree using the parsed files in the `files` directory. For a demonstration of this step, refer to the <font size=1>**Paper Tree Building Demo Video**</font>.
+This step builds the paper tree using the parsed files in the `files` directory. For a demonstration of this step, refer to the <font color=red>**Paper Tree Building Demo Video**</font>.
 
 https://github.com/user-attachments/assets/a62e2127-0d60-4db5-9aa4-044da9cd1594
 
