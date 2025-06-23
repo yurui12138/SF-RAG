@@ -1,8 +1,9 @@
 def get_true_title(headings):
+    newline = '\n'
     return f"""You are a helpful assistant responsible for analyzing and restructuring the hierarchical levels of headings in an academic paper.
 
 Given a list of lines extracted from a paper, where each line starts with "#" (some are actual headings, others are mistakenly marked as such):
-{'\n'.join(headings)}
+{newline.join(headings)}
 
 Task:
 1. Determine which lines are actual headings based on their content and context within the paper. Headings typically introduce new sections or subsections and often follow a logical structure such as Introduction, Methods, Results, Discussion, etc.
