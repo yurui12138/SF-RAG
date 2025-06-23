@@ -18,15 +18,8 @@ PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically fo
 To use PT-RAG, ensure the following requirements are met:
 
 - **Python 3.12**
-- `asyncio` library (included in Python 3.7+ standard library)
 
-You can install the PT-RAG package via pip (if available) or by cloning the repository. For example:
-
-```bash
-pip install pt-rag
-```
-
-Or:
+You can install the PT-RAG package by cloning the repository. For example:
 
 ```bash
 git clone https://github.com/your-repo/pt-rag.git
