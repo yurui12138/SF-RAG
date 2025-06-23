@@ -1,0 +1,83 @@
+[
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ba58cb8da5c81324e0.jpg",
+        "page_idx": 2,
+        "img_title": [
+            "Figure 1: Overall pre-training and fine-tuning procedures for BERT. Apart from output layers, the same architectures are used in both pre-training and fine-tuning. The same pre-trained model parameters are used to initialize models for different down-stream tasks. During fine-tuning, all parameters are fine-tuned. [CLS] is a special symbol added in front of every input example, and [SEP] is a special separator token (e.g. separating questions/answers)."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ba58cb8da5c81324de.jpg",
+        "page_idx": 4,
+        "img_title": [
+            "Figure 2: BERT input representation. The input embeddings are the sum of the token embeddings, the segmentation embeddings and the position embeddings."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673bb58cb8da5c81324e2.jpg",
+        "page_idx": 5,
+        "img_title": [
+            "Table 1: GLUE Test results, scored by the evaluation server (https://gluebenchmark.com/leaderboard). The number below each task denotes the number of training examples. The “Average” column is slightly different than the official GLUE score, since we exclude the problematic WNLI set.8 BERT and OpenAI GPT are singlemodel, single task. F1 scores are reported for QQP and MRPC, Spearman correlations are reported for STS-B, and accuracy scores are reported for the other tasks. We exclude entries that use BERT as one of their components."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ba58cb8da5c81324dd.jpg",
+        "page_idx": 6,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673ba58cb8da5c81324df.jpg",
+        "page_idx": 6,
+        "img_title": [
+            "Table 2: SQuAD 1.1 results. The BERT ensemble is $7\\mathbf{x}$ systems which use different pre-training checkpoints and fine-tuning seeds."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673bb58cb8da5c81324e3.jpg",
+        "page_idx": 6,
+        "img_title": [
+            "Table 4: SWAG Dev and Test accuracies. †Human performance is measured with 100 samples, as reported in the SWAG paper."
+        ]
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673bb58cb8da5c81324e1.jpg",
+        "page_idx": 7,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673bb58cb8da5c81324e4.jpg",
+        "page_idx": 8,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "https://pic1.imgdb.cn/item/683673bb58cb8da5c81324e5.jpg",
+        "page_idx": 8,
+        "img_title": [
+            "Table 7: CoNLL-2003 Named Entity Recognition results. Hyperparameters were selected using the Dev set. The reported Dev and Test scores are averaged over 5 random restarts using those hyperparameters."
+        ]
+    },
+    {
+        "img_path": "images/e40837d72c227f5647678bd799303f0a9729aa44537581453aed575b4584a2fe.jpg",
+        "page_idx": 12,
+        "img_title": "该图片没有标题"
+    },
+    {
+        "img_path": "images/59acbfc72ba34190c09c608c35ac22046991fb402c580edd7d0d6f0170f620c7.jpg",
+        "page_idx": 14,
+        "img_title": [
+            "Figure 4: Illustrations of Fine-tuning BERT on Different Tasks."
+        ]
+    },
+    {
+        "img_path": "images/e957ac7e9d1dbc06bb81d02801694a54669fea6a756e4c714c29e92f5690ff09.jpg",
+        "page_idx": 15,
+        "img_title": [
+            "Figure 5: Ablation over number of training steps. This shows the MNLI accuracy after fine-tuning, starting from model parameters that have been pre-trained for $k$ steps. The $\\mathbf{X}$ -axis is the value of $k$ ."
+        ]
+    },
+    {
+        "img_path": "images/dcb6e2fce05474aefef06860820041c53de29c92dc0cc38ca65f868b7c9c810a.jpg",
+        "page_idx": 15,
+        "img_title": "该图片没有标题"
+    }
+]
