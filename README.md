@@ -100,6 +100,12 @@ loop.run_until_complete(processor.build_paper_tree("./files"))
 
 This step builds the paper tree using the parsed files in the `files` directory. For a demonstration of this step, refer to the **Paper Tree Building Demo Video** (filename: `paper_tree_building_demo.mp4`).
 
+
+
+https://github.com/user-attachments/assets/bd80d60d-118e-486c-ab56-283f26a051c3
+
+
+
 ### 3. Answer Questions and Test PT-RAG Performance
 
 PT-RAG supports various question types and retrieval methods. Below are examples of how to use the system for different questions, each accompanied by a corresponding demo video.
