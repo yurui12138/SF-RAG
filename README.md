@@ -111,8 +111,7 @@ PT-RAG supports various question types and retrieval methods. Below are examples
 ```python
 result = loop.run_until_complete(
     processor.global_retrieval(
-        'Please briefly summarize the main components of the '
-        'Transformer model and their functions',
+        'Please briefly summarize the main components of the Transformer model and their functions',
         'single'
     )
 )
@@ -128,8 +127,7 @@ https://github.com/user-attachments/assets/df026bab-7b94-4a52-9d10-b14d36420bd1
 ```python
 result = loop.run_until_complete(
     processor.local_retrieval(
-        'How is the embedding layer designed and implemented '
-        'in the Vision Transformer?',
+        'How is the embedding layer designed and implemented in the Vision Transformer?',
         'single',
         False
     )
@@ -146,8 +144,7 @@ https://github.com/user-attachments/assets/fef549bc-5519-46d0-ad12-2d43166457e9
 ```python
 result = loop.run_until_complete(
     processor.local_retrieval(
-        'What datasets were used for pre-training ViT, '
-        'and what are the titles of their original papers?',
+        'What datasets were used for pre-training ViT, and what are the titles of their original papers?',
         'single',
         True
     )
@@ -164,8 +161,7 @@ https://github.com/user-attachments/assets/6ec6310a-baa9-4c4f-905f-ebc8011bd69c
 ```python
 result = loop.run_until_complete(
     processor.local_retrieval(
-        'What is the main difference between the models of '
-        'the two stages on the left and right sides of Figure 1?',
+        'What is the main difference between the models of the two stages on the left and right sides of Figure 1?',
         'single',
         True
     )
@@ -182,8 +178,7 @@ https://github.com/user-attachments/assets/4befa596-2f1d-4f3e-99ce-c62364fa22ef
 ```python
 result = loop.run_until_complete(
     processor.global_retrieval(
-        'Please analyze the relationships between '
-        'the methods proposed in these three papers',
+        'Please analyze the relationships between the methods proposed in these three papers',
         'cross'
     )
 )
@@ -199,8 +194,7 @@ https://github.com/user-attachments/assets/a167851d-4577-4269-90a2-fa9440378094
 ```python
 result = loop.run_until_complete(
     processor.local_retrieval(
-        'Please compare and contrast the embedding modules in '
-        'BERT and ViT',
+        'Please compare and contrast the embedding modules in BERT and ViT',
         'cross',
         False
     )
@@ -217,8 +211,7 @@ https://github.com/user-attachments/assets/45df602a-9b77-4907-9e26-25d34032d27a
 ```python
 result = loop.run_until_complete(
     processor.local_retrieval(
-        'What datasets were utilized during the pre-training phases '
-        'of BERT and ViT, respectively?',
+        'What datasets were utilized during the pre-training phases of BERT and ViT, respectively?',
         'cross',
         True
     )
