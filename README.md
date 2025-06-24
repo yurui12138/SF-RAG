@@ -42,13 +42,14 @@ Create a `.env` file in the project root directory and populate it with the foll
 
 ```env
 GPT_4o_mini.api_key=<your_api_key>
-GPT_4o_mini.base_url=https://vip.apiyi.com/v1
+GPT_4o_mini.base_url=<your_base_url>
 GPT_4o_mini.model=gpt-4o-mini
 GPT_4o_mini.model_vl=gpt-4o-mini
-GPT_4o_mini.rerank_url=https://api.siliconflow.cn/v1/rerank
+GPT_4o_mini.rerank_url=<your_rerank_url>
 GPT_4o_mini.rerank_api_key=<your_rerank_api_key>
 GPT_4o_mini.rerank_model=BAAI/bge-reranker-v2-m3
 GPT_4o_mini.picture_bed_url=<your_picture_bed_url>
+GPT_4o_mini.picture_bed_token=<your_picture_bed_token>
 ```
 
 Replace `<your_api_key>`, `<your_rerank_api_key>`, and `<your_picture_bed_url>` with your actual API keys and URL.
