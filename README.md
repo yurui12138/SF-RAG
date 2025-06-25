@@ -13,7 +13,7 @@ PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically fo
   - Detail questions (local retrieval)
   - Multi-hop questions
   - Figure-related questions
-- **Handle single and cross-paper queries**: For single-paper questions, the system automatically identifies the relevant paper.
+- **Handle single and cross-paper queries**: Offers a customizable search scope and flexible handling of both single and cross-paper inquiries.
 
 ## Installation
 
