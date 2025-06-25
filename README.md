@@ -15,20 +15,11 @@ PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically fo
   - Figure-related questions
 - **Handle single and cross-paper queries**: Offers a customizable search scope and flexible handling of both single and cross-paper inquiries.
 
-% ## Installation
+## Installation
 
 % To use PT-RAG, ensure the following requirements are met:
 
 - **Python 3.12**
-
-You can install the PT-RAG package by cloning the repository. For example:
-
-```bash
-git clone https://github.com/your-repo/pt-rag.git
-cd pt-rag
-```
-
-*Note: Replace `https://github.com/your-repo/pt-rag.git` with the actual repository URL if applicable.*
 
 ### Dependency Installation
 
