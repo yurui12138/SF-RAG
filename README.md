@@ -15,9 +15,9 @@ PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically fo
   - Figure-related questions
 - **Handle single and cross-paper queries**: Offers a customizable search scope and flexible handling of both single and cross-paper inquiries.
 
-## Installation
+% ## Installation
 
-To use PT-RAG, ensure the following requirements are met:
+% To use PT-RAG, ensure the following requirements are met:
 
 - **Python 3.12**
 
