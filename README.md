@@ -121,7 +121,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Global Retrieval Answer: \n{result}\n")
 ```
 
-**Demo Video**: 
+<font color=red>**Demo Video**</font>: 
 
 https://github.com/user-attachments/assets/df026bab-7b94-4a52-9d10-b14d36420bd1
 
@@ -138,7 +138,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Local Retrieval Answer (pro=False): \n{result}\n")
 ```
 
-**Demo Video**: 
+<font color=red>**Demo Video**</font>: 
 
 https://github.com/user-attachments/assets/fef549bc-5519-46d0-ad12-2d43166457e9
 
@@ -155,7 +155,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Local Retrieval Answer (pro=True): \n{result}\n")
 ```
 
-**Demo Video**: 
+<font color=red>**Demo Video**</font>: 
 
 https://github.com/user-attachments/assets/6ec6310a-baa9-4c4f-905f-ebc8011bd69c
 
@@ -172,7 +172,7 @@ result = loop.run_until_complete(
 print(f"Single Paper Local Retrieval Answer (pro=True): \n{result}\n")
 ```
 
-**Demo Video**: 
+<font color=red>**Demo Video**</font>: 
 
 https://github.com/user-attachments/assets/4befa596-2f1d-4f3e-99ce-c62364fa22ef
 
@@ -188,7 +188,7 @@ result = loop.run_until_complete(
 print(f"Cross-Paper Global Retrieval Answer: \n{result}\n")
 ```
 
-**Demo Video**: 
+<font color=red>**Demo Video**</font>: 
 
 https://github.com/user-attachments/assets/a167851d-4577-4269-90a2-fa9440378094
 
@@ -205,7 +205,7 @@ result = loop.run_until_complete(
 print(f"Cross-Paper Local Retrieval Answer (pro=False): \n{result}\n")
 ```
 
-**Demo Video**:
+<font color=red>**Demo Video**</font>:
 
 https://github.com/user-attachments/assets/45df602a-9b77-4907-9e26-25d34032d27a
 
@@ -222,7 +222,7 @@ result = loop.run_until_complete(
 print(f"Cross-Paper Local Retrieval Answer (pro=True): \n{result}\n")
 ```
 
-**Demo Video**:
+<font color=red>**Demo Video**</font>:
 
 https://github.com/user-attachments/assets/e36b830e-72ec-4270-8396-898b261c1eea
 
