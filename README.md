@@ -17,7 +17,7 @@ PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically fo
 
 ## Installation
 
-% To use PT-RAG, ensure the following requirements are met:
+ To use PT-RAG, ensure the following requirements are met:
 
 - **Python 3.12**
 
