@@ -54,7 +54,7 @@ class PaperTreeBuilder:
                             {"type": "input_image", "image_url": img_path}
                         ]
                     }],
-                    timeout=300
+                    timeout=30
                 )
                 summary = response.output_text.strip()
                 async with aiofiles.open(cache_file, 'w', encoding='utf-8') as f:
