@@ -45,18 +45,18 @@ class PaperTreeBuilder:
                 return (await f.read()).strip()
         for attempt in range(max_retries):
             try:
-                response = await self.llm.chat.completions.create(
+                response = await self.llm.responses.create(
                     model=self.config.model_vl,
-                    messages=[{
+                    input=[{
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": generate_images_summary_promote(img_title)},
-                            {"type": "image_url", "image_url": {"url": img_path}}
+                            {"type": "input_text", "text": generate_images_summary_promote(img_title)},
+                            {"type": "input_image", "image_url": img_path}
                         ]
                     }],
-                    timeout=30
+                    timeout=300
                 )
-                summary = response.choices[0].message.content.strip()
+                summary = response.output_text.strip()
                 async with aiofiles.open(cache_file, 'w', encoding='utf-8') as f:
                     await f.write(summary)
                 return summary
