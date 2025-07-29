@@ -21,32 +21,8 @@ logger = logging.getLogger(__name__)
 
 class LocalRetriever(BaseRetriever):
     def __init__(self, config: Config, retrieval_config: Dict):
-        super().__init__(config)
+        super().__init__(config, retrieval_config)
         self.retrieval_config = retrieval_config
-
-    async def rerank_contents(self, query: str, items: List[str]) -> List[Dict]:
-        payload = {
-            "model": self.config.rerank_model,
-            "query": query,
-            "documents": [self.clean_text(item) for item in items],
-            "top_n": self.retrieval_config["top_n"],
-            "return_documents": False,
-            "max_chunks_per_doc": 1024,
-            "overlap_tokens": 80
-        }
-        headers = {
-            "Authorization": f"Bearer {self.retrieval_config['rerank_api_token']}",
-            "Content-Type": "application/json"
-        }
-        try:
-            response = requests.post(self.retrieval_config["rerank_api_url"], json=payload, headers=headers)
-            response.raise_for_status()
-            results = response.json().get("results", [])
-            filtered_results = [r for r in results if r.get("relevance_score", 0) >= self.retrieval_config["min_relevance_score"]]
-            return filtered_results or results[:self.retrieval_config["top_n"]]
-        except requests.RequestException as e:
-            logger.error(f"Rerank API request failed: {e}")
-            raise
 
     def get_relevant_summaries(self, selected_group: Dict, is_summary_retrieval: bool = False) -> str:
         path = selected_group["path"]
