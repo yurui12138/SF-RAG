@@ -1,6 +1,8 @@
 import asyncio
 import re
 from typing import Tuple
+
+import requests
 from openai import AsyncOpenAI
 from promote import find_most_relevant_section
 import json
@@ -20,7 +22,7 @@ logging.getLogger().setLevel(logging.CRITICAL)
 logger = logging.getLogger(__name__)
 
 class BaseRetriever:
-    def __init__(self, config: Config):
+    def __init__(self, config: Config, retrieval_config: Dict):
         self.config = config
         self.llm = AsyncOpenAI(api_key=config.api_key, base_url=config.base_url)
         self.sections: List[Tuple[str, str, int]] = []
@@ -28,6 +30,7 @@ class BaseRetriever:
         self.paper_title: Optional[str] = None
         self.title_path: Optional[str] = None
         self.paper_data_map: Dict[str, Dict] = {}
+        self.retrieval_config = retrieval_config
 
     def fix_third_level_paths(self, data):
         for key1, value1 in data.items():
@@ -55,7 +58,7 @@ class BaseRetriever:
             queries_dict = self._filter_papers(queries_dict, selected_papers)
             logger.info("Loaded output/all_papers.json")
 
-            self._reset_data()  # 重置内部数据结构
+            self._reset_data()  
             return self._process_paper_data(queries_dict)
         except (FileNotFoundError, json.JSONDecodeError) as e:
             logger.error(f"Failed to load JSON: {e}")
@@ -87,9 +90,34 @@ class BaseRetriever:
         self.title_path = None
         self.paper_data_map = {}
 
+
+    async def rerank_contents(self, query: str, items: List[str]) -> List[Dict]:
+        payload = {
+            "model": self.config.rerank_model,
+            "query": query,
+            "documents": [self.clean_text(item) for item in items],
+            "top_n": self.retrieval_config["top_n"],
+            "return_documents": False,
+            "max_chunks_per_doc": 1024,
+            "overlap_tokens": 80
+        }
+        headers = {
+            "Authorization": f"Bearer {self.retrieval_config['rerank_api_token']}",
+            "Content-Type": "application/json"
+        }
+        try:
+            response = requests.post(self.retrieval_config["rerank_api_url"], json=payload, headers=headers)
+            response.raise_for_status()
+            results = response.json().get("results", [])
+            filtered_results = [r for r in results if r.get("relevance_score", 0) >= self.retrieval_config["min_relevance_score"]]
+            return filtered_results or results[:self.retrieval_config["top_n"]]
+        except requests.RequestException as e:
+            logger.error(f"Rerank API request failed: {e}")
+            raise
+
     def _process_paper_data(self, queries_dict: Dict) -> bool:
         min_path_length = float('inf')
-        is_multi_paper = "Papers_Root" in queries_dict and isinstance(queries_dict["Papers_Root"], dict)  # 判断是否为多篇论文
+        is_multi_paper = "Papers_Root" in queries_dict and isinstance(queries_dict["Papers_Root"], dict)  
 
         if is_multi_paper:
             logger.info("Processing all_papers.json format")
@@ -176,8 +204,13 @@ class BaseRetriever:
             logger.critical(f"The title most relevant to question <{question}> is  <{paper_title}>")
             return paper_title
         except Exception as e:
+            section_titles = []
+            for _, path, depth in relevant_sections:
+                section_titles.append(path)
+            paper_title_index = await self.rerank_contents(question, section_titles)
+            top_title = section_titles[paper_title_index[0]['index']]
             logger.error(f"Error in title relevance judgment: {e}")
-            return None
+            return top_title
 
     async def _call_llm(self, prompt: str, max_tokens: int, temperature: float) -> str:
         for attempt in range(3):
