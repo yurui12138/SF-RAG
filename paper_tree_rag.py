@@ -46,7 +46,7 @@ class PaperTreeRAG:
         if retrieval_config:
             self.retrieval_config.update(retrieval_config)
         self.paper_tree_builder = PaperTreeBuilder(config)
-        self.global_retriever = GlobalRetriever(config)
+        self.global_retriever = GlobalRetriever(config, self.retrieval_config)
         self.local_retriever = LocalRetriever(config, self.retrieval_config)
         self.processed_folders = self.load_processed_folders()
         self.all_papers_path = "output/all_papers.json"
