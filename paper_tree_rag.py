@@ -42,6 +42,9 @@ class PaperTreeRAG:
             "min_relevance_score": 0.1,
             "max_retries": 3,
             "retry_delay": 2,
+            # FocusedRAG parameters
+            "use_focused_rag": True,  # Enable/disable FocusedRAG
+            "token_budget": 2000,      # Token budget for evidence aggregation
         }
         if retrieval_config:
             self.retrieval_config.update(retrieval_config)
