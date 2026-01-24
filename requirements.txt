@@ -3,3 +3,4 @@ aiofiles
 pysbd
 openai
 requests
+numpy

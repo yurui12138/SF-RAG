@@ -8,6 +8,7 @@ from promote import (
 )
 import ast
 from base_retriever import BaseRetriever
+from focused_rag import FocusedRAG
 
 logging.basicConfig(
     level=logging.INFO,
@@ -23,6 +24,13 @@ class LocalRetriever(BaseRetriever):
     def __init__(self, config: Config, retrieval_config: Dict):
         super().__init__(config, retrieval_config)
         self.retrieval_config = retrieval_config
+        # Initialize FocusedRAG with configurable token budget
+        token_budget = retrieval_config.get('token_budget', 2000)
+        self.focused_rag = FocusedRAG(
+            rerank_function=self.rerank_contents,
+            token_budget=token_budget
+        )
+        self.use_focused_rag = retrieval_config.get('use_focused_rag', True)
 
     def get_relevant_summaries(self, selected_group: Dict, is_summary_retrieval: bool = False) -> str:
         path = selected_group["path"]
@@ -322,10 +330,114 @@ class LocalRetriever(BaseRetriever):
             item_type = "reference" if "reference" in query.lower() else "figure"
             special_contexts = await self.process_retrieval(query, relevant_title, item_type)
             return special_contexts
+        
+        # FocusedRAG Enhanced Retrieval
+        if self.use_focused_rag:
+            return await self.focused_rag_retrieve_contexts(query, relevant_title, paper_title)
+        
+        # Original retrieval method
         return self.merge_contexts(
             await self.process_retrieval(query, relevant_title, "content"),
             await self.process_retrieval(query, relevant_title, "summary")
         )
+    
+    async def focused_rag_retrieve_contexts(self, query: str, relevant_title: str, paper_title: Optional[str] = None) -> List[Dict]:
+        """
+        FocusedRAG-enhanced context retrieval with section localization and density-guided selection.
+        
+        Args:
+            query: User query
+            relevant_title: Primary relevant section title
+            paper_title: Paper title for filtering
+            
+        Returns:
+            List of context dictionaries with enhanced precision
+        """
+        logger.critical(f"Using FocusedRAG for enhanced retrieval")
+        
+        # Gather candidate sections from the paper
+        candidate_sections = []
+        for group in self.groups:
+            if paper_title and not group["path"].startswith(f"/{paper_title}/"):
+                continue
+            
+            if group.get("special_type") == "reference":
+                continue
+            
+            # Extract section information
+            path = group["path"]
+            section_title = path.split('/')[-1]
+            content = group.get("content", "")
+            summary = group.get("summary", "")
+            
+            if not content:
+                continue
+            
+            # Check if we already have this section
+            existing = None
+            for sec in candidate_sections:
+                if sec['title'] == section_title and sec['path'] == path:
+                    existing = sec
+                    break
+            
+            if existing:
+                # Append content to existing section
+                existing['content'] += " " + content
+                if summary:
+                    existing['summary'] += " " + summary
+            else:
+                # New section
+                candidate_sections.append({
+                    'title': section_title,
+                    'path': path,
+                    'content': content,
+                    'summary': summary,
+                    'groups': [group]
+                })
+        
+        if not candidate_sections:
+            logger.warning("No candidate sections found for FocusedRAG")
+            return []
+        
+        # Apply FocusedRAG retrieval pipeline
+        try:
+            focused_result = await self.focused_rag.retrieve(
+                query=query,
+                sections=candidate_sections,
+                token_budget=self.retrieval_config.get('token_budget', 2000)
+            )
+            
+            # Convert FocusedRAG results to context format
+            contexts = []
+            for sentence_data in focused_result['sentences']:
+                content = sentence_data['content']
+                score = sentence_data['relevance_score']
+                
+                # Find source section for this sentence
+                source_section = None
+                for section in focused_result['sections']:
+                    if content in section.get('content', ''):
+                        source_section = section
+                        break
+                
+                if source_section:
+                    contexts.append({
+                        "path": source_section['path'],
+                        "content": content,
+                        "summaries": source_section.get('summary', ''),
+                        "relevance_score": score
+                    })
+            
+            logger.critical(f"FocusedRAG retrieved {len(contexts)} high-quality contexts")
+            return contexts
+            
+        except Exception as e:
+            logger.error(f"FocusedRAG retrieval failed: {e}, falling back to original method")
+            # Fallback to original method
+            return self.merge_contexts(
+                await self.process_retrieval(query, relevant_title, "content"),
+                await self.process_retrieval(query, relevant_title, "summary")
+            )
 
     async def _extract_entities(self, sub_query: str, contexts: List) -> List[str]:
         if not contexts:
