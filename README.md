@@ -2,8 +2,6 @@
 
 PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically for academic papers. It enables users to build a "paper tree" from a directory of paper files (e.g., PDFs) and answer various types of questions based on single or multiple papers. The system supports both global (macro) and local (detail) retrieval and can handle complex queries, such as multi-hop questions and figure-related inquiries.
 
-![Method](https://github.com/user-attachments/assets/6bdebbf9-087c-429e-8f6e-e46c23b54c2a)
-
 ## Features
 
 - **Build a paper tree**: Construct a paper tree from a directory containing academic paper files (e.g., PDFs).
