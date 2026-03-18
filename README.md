@@ -1,6 +1,6 @@
-# PT-RAG
+# SF-RAG
 
-PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically for academic papers. It enables users to build a "paper tree" from a directory of paper files (e.g., PDFs) and answer various types of questions based on single or multiple papers. The system supports both global (macro) and local (detail) retrieval and can handle complex queries, such as multi-hop questions and figure-related inquiries.
+SF-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically for academic papers. It enables users to build a "paper tree" from a directory of paper files (e.g., PDFs) and answer various types of questions based on single or multiple papers. The system supports both global (macro) and local (detail) retrieval and can handle complex queries, such as multi-hop questions and figure-related inquiries.
 
 ## Features
 
@@ -15,7 +15,7 @@ PT-RAG is a Retrieval-Augmented Generation (RAG) system designed specifically fo
 
 ## Installation
 
- To use PT-RAG, ensure the following requirements are met:
+ To use SF-RAG, ensure the following requirements are met:
 
 - **Python 3.12**
 
@@ -65,7 +65,7 @@ Before building the paper tree, you need to process PDF files using MinerU. Foll
 
 ## Usage
 
-Follow these steps to use PT-RAG:
+Follow these steps to use SF-RAG:
 
 ### 1. Import Necessary Modules and Initialize Configuration
 
@@ -80,10 +80,10 @@ loop = always_get_an_event_loop()
 
 Ensure that the required environment variables are correctly set in the `.env` file (as described in the "Environment Variable Configuration" section).
 
-### 2. Instantiate PT-RAG and Build the Paper Tree
+### 2. Instantiate SF-RAG and Build the Paper Tree
 
 ```python
-# Instantiate PT-RAG
+# Instantiate SF-RAG
 processor = PaperTreeRAG(config)
 
 # Build paper tree from processed files
@@ -94,9 +94,9 @@ This step builds the paper tree using the parsed files in the `files` directory.
 
 https://github.com/user-attachments/assets/a62e2127-0d60-4db5-9aa4-044da9cd1594
 
-### 3. Answer Questions and Test PT-RAG Performance
+### 3. Answer Questions and Test SF-RAG Performance
 
-PT-RAG supports various question types and retrieval methods. Below are examples of how to use the system for different questions, each accompanied by a corresponding demo video.
+SF-RAG supports various question types and retrieval methods. Below are examples of how to use the system for different questions, each accompanied by a corresponding demo video.
 
 #### Example 1: Macro Question on a Single Paper
 
@@ -219,7 +219,7 @@ https://github.com/user-attachments/assets/e36b830e-72ec-4270-8396-898b261c1eea
 
 ## Running the Test Script
 
-To test the PT-RAG system, run the `test.py` script, which includes code for building the paper tree and answering various questions. Before running the script, ensure that the `files` directory contains the parsed PDF files.
+To test the SF-RAG system, run the `test.py` script, which includes code for building the paper tree and answering various questions. Before running the script, ensure that the `files` directory contains the parsed PDF files.
 
 ```bash
 python test.py
@@ -228,4 +228,4 @@ python test.py
 The script executes the following three stages:
 1. **Initialization**: Import modules and configure the environment.
 2. **Build Paper Tree**: Construct the paper tree using the parsed files in the `files` directory (see `paper_tree_building_demo.mp4`).
-3. **Test Performance**: Evaluate PT-RAG's retrieval and answering capabilities using different question types (see demo videos for each question).
+3. **Test Performance**: Evaluate SF-RAG's retrieval and answering capabilities using different question types (see demo videos for each question).
