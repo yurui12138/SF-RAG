@@ -1,0 +1,5 @@
+dotenv
+pysbd
+openai
+requests
+tiktoken
